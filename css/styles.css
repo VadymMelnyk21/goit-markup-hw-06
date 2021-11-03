@@ -636,7 +636,7 @@ h1, h2, h3, p {
 .join-text {
     margin-bottom: 20px;
     font-weight: 700;
-    letter-spacing: 0.03em;
+ 
     text-transform: uppercase;
     color: var(--basic-white-color);
 }
@@ -646,6 +646,69 @@ h1, h2, h3, p {
 }
 
 .join-social-ico {
+    fill: #ffffff;
+}
+
+.subscription {
+    margin-left: auto;
+}
+
+
+.footer-form-input {
+    width: 358px;
+    height: 50px;
+    padding: 15px 16px;
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #ffffff;
+
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+/* .footer-form-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+} */
+
+.subscription-btn {
+    width: 200px;
+    height: 50px;
+    padding: 0;
+    margin-left: 12px;
+
+    border-color: transparent;
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.subscription-btn-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-btn-text {
+    margin-right: 10px;
+
+    color:var(--basic-white-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+}
+
+.subscription-icon {
     fill: #ffffff;
 }
 
@@ -679,6 +742,8 @@ h1, h2, h3, p {
     position: absolute;
     top: 50%;
     left: 50%;
+
+    padding: 40px;
 
     min-width: 528px;
     min-height: 581px;
