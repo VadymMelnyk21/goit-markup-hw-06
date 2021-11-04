@@ -604,23 +604,43 @@
             </button>
           </form>
         </div>
-
       </div>
     </footer>
     <!-- modal -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+
         <form class="modal-form">
           <label>
-          <input 
-          class="modal-input"
-          name="name"
-          type="text">
+            Имя
+            <input class="modal-form-input" name="username" type="text" />
           </label>
+
+          <label>
+            Телефон
+            <input class="modal-form-input" name="tel" type="tel" />
+          </label>
+
+          <label>
+            Почта
+            <input class="modal-form-input" name="mail" type="email" />
+          </label>
+
+          <label>
+            Комментарий
+            <textarea class="modal-form-textarea" name="comment" placeholder="Введите текст"></textarea>
+          </label>
+
+          <label>
+            <input type="checkbox">
+            Соглашаюсь с рассылкой и принимаю 
+            <a href="">Условия договора</a>
+          </label>
+
+          <button class="modal-form-btn" type="submit">Отправить</button>
+
         </form>
-
-
 
         <button class="modal-btn" data-modal-close>
           <svg class="modal-btn-icon" width="18px" height="18px">
