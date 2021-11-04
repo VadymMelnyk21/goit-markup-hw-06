@@ -56,13 +56,15 @@ body {
 
 .visually-hidden {
     position: absolute;
+    white-space: nowrap;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    padding: 0;
     overflow: hidden;
     border: 0;
-    clip: rect(0 0 0 0)
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
   }
 
 a {
@@ -669,12 +671,18 @@ h1, h2, h3, p {
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .footer-form-input:focus {
+.footer-form-input:focus {
     border-color: var(--accent-color);
     outline: none;
-} */
+}
+
+.footer-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
 
 .subscription-btn {
     width: 200px;
@@ -687,29 +695,30 @@ h1, h2, h3, p {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     cursor: pointer;
-}
-
-.subscription-btn-container {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.subscription-btn-text {
-    margin-right: 10px;
 
     color:var(--basic-white-color);
     font-weight: 700;
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.06em;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscription-btn:hover,
+.subscription-btn:focus {
+    background-color: #188CE8;
+}
+
+.subscription-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .subscription-icon {
-    fill: #ffffff;
+    fill: currentColor;
+    margin-left: 10px;
 }
 
 
@@ -745,7 +754,7 @@ h1, h2, h3, p {
 
     padding: 40px;
 
-    min-width: 528px;
+    width: 528px;
     min-height: 581px;
     background-color: #fff;
 
@@ -756,22 +765,115 @@ h1, h2, h3, p {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form {
-    width: 448px;
+/* .modal-form {
+  
+} */
+
+.modal-form-title {
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: #212121;
+}
+.modal-form-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+}
+
+.modal-form-wrapper {
+    position: relative;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 10px;
 }
 
 .modal-form-input {
     width: 100%;
+    height: 40px;
+
+    padding-left: 42px;
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    cursor: pointer;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.modal-form-input:focus + .modal-form-icon {
+    fill: var(--accent-color);
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+
+    fill: var(--title-text-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-textarea {
     width: 100%;
     height: 120px;
     padding: 12px 16px;
+    margin-top: 4px;
+    margin-bottom: 20px;
     resize: none;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.modal-form-textarea::placeholder {
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+.modal-form-checkbox-label::before {
+    display: block;
+    content: '';
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+
+    border: 2px solid var(--title-text-color);
+    border-radius: 2px;
+}
+
+.form-agreement {
+    text-decoration: underline;
+    color: var(--accent-color);
 }
 
 .modal-form-btn {
@@ -793,8 +895,7 @@ h1, h2, h3, p {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .modal-form-btn:hover,
@@ -813,6 +914,7 @@ h1, h2, h3, p {
     border: 1px solid rgba(0, 0, 0, 0.1);;
     border-radius: 50%;
     background-color: #ffffff;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
